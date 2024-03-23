@@ -6,12 +6,16 @@
       <div class="message">
         <div id="message-head">
          <p><%= message.user.username %></p>
-         <p id="message-time"><%= message.created_at.strftime("%H:%M") %>
+         <p id="message-time"><%= message.created_at.strftime("%H:%M %d/%m") %>
         </div>
         <p><%= message.content %></p>
       </div>
   <% end %>
   </div>
   <div id="write-message">
+    <%= form_with(model: @message, url: messages_path) do |form| %>
+      <%= form.text_field :content %>
+      <%= form.submit %>
+    <% end %>
   </div>
 </div>

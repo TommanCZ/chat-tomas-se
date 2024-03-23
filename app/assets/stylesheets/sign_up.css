@@ -1,0 +1,9 @@
+body {
+background-color: grey;
+}
+
+#sing_up_window {
+width: 40%;
+margin: auto;
+background-color: yellow;
+}

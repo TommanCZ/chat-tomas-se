@@ -7,13 +7,16 @@ background-color: lightblue;
 }
 
 #write-messages {
-position: fixed;
+background-color: darkgray;
+/*position: fixed;*/
 background-color: yellow;
-width: 100%;
+width: 60%;
 height: 20%;
+margin-left: 20%
 }
 
 #page {
+background-color: gray;
 width: 100%;
 height: 100%;
 }
@@ -34,4 +37,5 @@ width: 100%;
 
 #message-time {
 float: right;
+margin-left: 1rem;
 }
