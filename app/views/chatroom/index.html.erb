@@ -13,9 +13,9 @@
   <% end %>
   </div>
   <div id="write-message">
-    <%= form_with(model: @message, url: messages_path) do |form| %>
-      <%= form.text_field :content %>
-      <%= form.submit %>
+    <%= form_with(model: Message.new, url: chatroom_create_message_path) do |message| %>
+      <%= message.text_field :content %>
+      <%= message.submit %>
     <% end %>
   </div>
 </div>
