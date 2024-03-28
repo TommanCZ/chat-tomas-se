@@ -1,10 +1,12 @@
 <%= stylesheet_link_tag 'sign_up' %>
 <div id="sing_up_window">
-  <form>
-  <p>Hello</p>
-  <input type="text" id="username" name="usname"><br><br>
-  <input type="text" id="passwd1" name="pass1"><br><br>
-  <input type="text" id="passwd2" name="pass2"><br><br>
-  <input type="submit" value="Submit">
-</form> 
+  <div id="sign_up_form">
+    <p>pokus</p>
+    <%= form_with(model: User.new, url: users_path) do |user| %>
+      <%= user.text_field :username %>
+      <%= user.text_field :passhash %>
+      <%= user.text_field :confirm_password %>
+      <%= user.submit %>
+    <% end %>
+  </div>
 </div>
