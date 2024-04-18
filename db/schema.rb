@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_07_151339) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_18_150459) do
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.integer "user_id", null: false
@@ -25,6 +25,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_151339) do
     t.string "salt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "encrypted_password", limit: 128
+    t.string "confirmation_token", limit: 128
+    t.string "remember_token", limit: 128
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["remember_token"], name: "index_users_on_remember_token", unique: true
   end
 
   add_foreign_key "messages", "users"
