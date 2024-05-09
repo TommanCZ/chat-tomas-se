@@ -1,12 +1,15 @@
-<%= stylesheet_link_tag 'sign_up' %>
-<div id="sing_up_window">
-  <div id="sign_up_form">
-    <p>pokus</p>
-    <%= form_with(model: User.new, url: users_path) do |user| %>
-      <%= user.text_field :username %>
-      <%= user.text_field :passhash %>
-      <%= user.text_field :confirm_password %>
-      <%= user.submit %>
-    <% end %>
-  </div>
+<div id="clearance" class="sign-up">
+  <h2><%= t(".title") %></h2>
+
+  <%= form_for @user do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+
+    <div class="other-links">
+      <%= link_to t(".sign_in"), sign_in_path %>
+    </div>
+  <% end %>
 </div>
